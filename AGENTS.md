@@ -8,13 +8,14 @@ of those. Read this file before touching any code.
 
 Before making any change, read in this order:
 
-1. `AGENTS.md` (this file) — how to behave
-2. `PROJECT.md` — what we're building and for whom
-3. `ARCHITECTURE.md` — how the system fits together
-4. `DECISIONS.md` — why it's built this way, so you don't "fix" a deliberate choice
-5. `TASKS.md` — what's currently in flight
-6. `SECURITY.md` — what you must never touch or expose
-7. `TESTING.md` — what "done" actually means
+1. `AGENTS.md` (this file) — repository operating rules
+2. `SKILL.md` — reusable Web3 engineering, hackathon research, ideation, and security standards
+3. `PROJECT.md` — what we're building and for whom
+4. `ARCHITECTURE.md` — how the system fits together
+5. `DECISIONS.md` — why it's built this way, so you don't "fix" a deliberate choice
+6. `TASKS.md` — what's currently in flight
+7. `SECURITY.md` — what you must never touch or expose
+8. `TESTING.md` — what "done" actually means
 
 If a request conflicts with something in `DECISIONS.md` or `SECURITY.md`,
 stop and flag the conflict instead of resolving it silently.
