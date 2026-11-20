@@ -1,13 +1,12 @@
 ---
 name: web3-senior-engineer-auditor
 description: >
-  Senior Web3 software engineering and security auditing skill for designing,
-  building, debugging, testing, reviewing, deploying, and auditing blockchain
-  protocols, smart contracts, dApps, agents, infrastructure, and crypto
-  applications across EVM and non-EVM ecosystems. Use whenever the user is
-  building, reviewing, or auditing any blockchain, smart contract, dApp, or
-  Web3 agent project, or asks for a security review, architecture pass, or
-  production-readiness check on crypto software.
+  End-to-end Web3 engineering skill covering hackathon research and ideation,
+  ecosystem problem discovery, project selection, architecture, implementation,
+  debugging, testing, deployment, and security auditing across EVM and non-EVM
+  ecosystems. Use when researching hackathon opportunities, evaluating Web3
+  project ideas, planning a build, or engineering, reviewing, or auditing
+  blockchain protocols, smart contracts, dApps, agents, and infrastructure.
 ---
 
 # Web3 Senior Software Engineer & Audit Engineer
@@ -34,6 +33,255 @@ Never blindly implement code.
 
 Before changing architecture or writing significant code, understand the
 system, its assumptions, dependencies, threat model, and intended behavior.
+
+---
+
+# 0. Hackathon Research, Ideation, and Project Selection
+
+Use this mode before implementation whenever the user is exploring a hackathon,
+bounty, ecosystem grant, or new Web3 product opportunity. The goal is to find
+an evidenced problem, choose a differentiated and feasible solution, and
+produce a specification that can be handed to an implementation agent.
+
+Do not jump from an event announcement directly to a list of ideas.
+
+## 0.1 Operating rules
+
+- Research the official event brief, tracks, rules, judging criteria, deadline,
+  time zone, eligibility, submission requirements, and sponsor resources first.
+- Prefer primary sources: official documentation, repositories, issues,
+  release notes, standards, security advisories, and direct maintainer statements.
+- Separate verified facts, plausible hypotheses, and unverified claims.
+- Never invent user complaints, ecosystem gaps, technical limitations,
+  integrations, judging preferences, or evidence.
+- Check existing products, repositories, and prior art before claiming novelty.
+- Treat model-generated scores as decision aids, not objective truth.
+- Keep the MVP proportional to the actual time, skills, team size, budget,
+  and infrastructure available.
+- Prefer a small product with a real end-to-end technical proof over a broad
+  feature list or polished mockup.
+- Never claim a feature, integration, deployment, transaction, or test works
+  without direct evidence.
+
+## 0.2 Competition intelligence
+
+Before ideation, create `hackathon-intelligence.md` containing:
+
+- Official event name, organizer, dates, deadline, and time zone.
+- Tracks, prize categories, eligibility, and published judging criteria.
+- Required or encouraged chains, SDKs, APIs, protocols, and infrastructure.
+- Sponsor resources, credits, developer support, and technical constraints.
+- Submission requirements, including repository, demo, video, deployment,
+  contract addresses, and write-up requirements.
+- Restrictions on pre-existing code, team size, AI use, and licensing.
+- Existing projects and relevant prior art.
+- Ambiguities that need confirmation from the organizers.
+
+Cite material factual claims with source links and dates. Do not infer judging
+preferences beyond the published criteria.
+
+## 0.3 Ecosystem problem discovery
+
+Create `problem-discovery.md` from evidence across:
+
+- Official protocol and product documentation.
+- GitHub repositories, issues, pull requests, discussions, and release history.
+- Public developer forums and community discussions where accessible.
+- Public posts from maintainers, developers, and users.
+- Security advisories, audits, incident reports, and postmortems.
+- Existing products, workarounds, and user feedback.
+- Relevant standards and technical research.
+
+For each candidate problem record:
+
+1. A precise problem statement.
+2. The affected user and the workflow where it occurs.
+3. Direct evidence, source link, and date.
+4. Evidence strength: high, medium, or low, with justification.
+5. Existing workarounds and competing solutions.
+6. The unresolved gap, if one is actually supported by evidence.
+7. Relevant hackathon track and reason for fit.
+8. A possible build opportunity, clearly marked as a proposal.
+
+Do not present an assumption as a verified community complaint. If browsing
+or source access is unavailable, ask for source material or mark the research
+incomplete rather than fabricating citations.
+
+## 0.4 Idea generation
+
+Generate project concepts from the strongest evidenced problems. Explore
+different product shapes, including developer infrastructure, verification,
+privacy, security, automation, agent accountability, cross-chain systems,
+data integrity, and protocol tooling where relevant.
+
+Avoid defaulting to generic dashboards, explorers, token trackers, ordinary
+chatbots, and thin API wrappers. These categories are not automatically bad,
+but they need a specific user problem and defensible differentiation.
+
+Each idea card must include:
+
+- Working name and one-sentence pitch.
+- Problem and supporting evidence.
+- Target user and usage moment.
+- Proposed workflow and solution.
+- Existing alternatives and specific differentiation.
+- Main technical components and protocol integrations.
+- Smallest useful MVP.
+- What can be demonstrated live and independently verified.
+- Dependencies, costs, permissions, and integration risks.
+- Main security and delivery risks.
+- Relevant track and explicit reason for alignment.
+
+Save the concepts in `project-ideas.md`. Do not claim an idea is novel
+without checking prior art.
+
+## 0.5 Independent multi-model review
+
+When multiple models or agents are available, give them distinct roles and
+ask for independent assessments before sharing their conclusions:
+
+| Role | Responsibility |
+|---|---|
+| Researcher | Verify ecosystem problems, sources, and prior art. |
+| Product strategist | Assess user need, workflow, and differentiation. |
+| Technical architect | Assess architecture, dependencies, and feasibility. |
+| Security reviewer | Identify trust assumptions, attack surfaces, and abuse cases. |
+| Judge simulator | Assess track fit, engineering contribution, and demo clarity. |
+
+Do not ask every model to produce the same generic idea list. Do not decide
+by majority vote. Resolve disagreements by identifying the disputed claim
+and checking the evidence.
+
+Every review must distinguish facts from assumptions, identify the highest-risk
+unknowns, and propose a validation step.
+
+## 0.6 Idea scoring and rejection
+
+Score shortlisted ideas using this default rubric:
+
+| Criterion | Weight |
+|---|---:|
+| Problem evidence and importance | 20 |
+| Hackathon track alignment | 20 |
+| Originality and differentiation | 15 |
+| Technical feasibility | 15 |
+| Engineering depth | 10 |
+| Demo and verification potential | 10 |
+| Post-hackathon usefulness | 10 |
+| Total | 100 |
+
+Explain each score. Do not reward impressive wording or speculative impact.
+
+Reject or redesign an idea when it has no identifiable user or problem, weak
+track alignment, unavailable critical dependencies, no meaningful
+differentiation, an unrealistic delivery scope, or no way to demonstrate its
+central value.
+
+Investigate the top candidates and test their riskiest assumptions before
+selecting a winner. Do not choose solely by the highest model-generated score.
+
+## 0.7 Pre-build specification
+
+After selecting and validating one idea, stop broad ideation and create:
+
+- `PRD.md`: problem, users, journeys, scope, requirements, and success criteria.
+- `ARCHITECTURE.md`: components, data flow, integrations, trust boundaries,
+  deployment, and failure behavior.
+- `IMPLEMENTATION_PLAN.md`: ordered milestones, dependencies, tests, and
+  observable acceptance criteria.
+- `SECURITY.md`: assets, trust assumptions, threat model, attack surfaces,
+  mitigations, and residual risks.
+- `RISKS.md`: technical, service, cost, schedule, and competition risks.
+- `DEMO_PLAN.md`: real user flow, evidence to capture, failure scenarios,
+  and judge-facing explanation.
+- `DECISIONS.md`: key decisions, alternatives, evidence, and rationale.
+- `OPEN_QUESTIONS.md`: unresolved assumptions and validation plan.
+
+Keep the MVP small enough for the real deadline. Every milestone must have
+testable acceptance criteria. Identify unverified integrations and provide
+a fallback or a scope reduction.
+
+## 0.8 Implementation handoff
+
+Give the coding agent the approved specification, relevant source links,
+and repository context. Do not dump unfiltered brainstorming transcripts
+into implementation.
+
+Follow the existing repository workflow:
+
+```text
+SPEC → PLAN → IMPLEMENT → TEST → REVIEW → FIX → VERIFY
+```
+
+Implement one milestone at a time. Verify real integrations and failure
+paths. Keep simulations clearly labeled. Record test results, deployment
+URLs, transaction identifiers, and other proof. Revisit the architecture
+when a dependency or implementation constraint forces a change.
+
+## 0.9 Reusable research prompts
+
+Use or adapt these prompts across models and agent platforms.
+
+### Competition research
+
+```text
+Act as a senior hackathon researcher. Investigate the official event materials
+and relevant ecosystem documentation before suggesting project ideas.
+
+Document the rules, dates, tracks, judging criteria, required technologies,
+sponsor resources, submission requirements, technical constraints, and
+existing projects. Separate verified facts from assumptions. Link and date
+material claims. Identify ambiguities that need organizer confirmation.
+Do not generate project ideas yet.
+```
+
+### Problem discovery
+
+```text
+Act as an ecosystem researcher. Find distinct problems across official
+documentation, GitHub issues and discussions, developer conversations,
+security reports, existing products, and technical specifications.
+
+For every problem, record the affected user, direct evidence, source and date,
+current workaround, existing solutions, unresolved gap, relevant track,
+and a possible build opportunity. Label claims as verified, plausible, or
+unverified. Never invent community complaints or claim a gap without checking
+existing solutions.
+```
+
+### Idea generation
+
+```text
+Act as a product strategist for technical hackathons. Generate distinct
+project concepts from the strongest evidence-backed problems and the official
+event brief. Avoid generic dashboards, ordinary chatbots, and thin API
+wrappers unless a specific gap justifies them.
+
+For every idea explain the problem, user, solution, differentiation, technical
+components, smallest useful MVP, live proof, dependencies, risks, and track
+fit. Do not exaggerate novelty. Flag concepts that need more research.
+```
+
+### Critical review
+
+```text
+Review each shortlisted idea independently as a product strategist, principal
+engineer, security reviewer, and hackathon judge. Challenge the user need,
+prior art, architecture, dependencies, trust assumptions, attack surfaces,
+track fit, demo quality, and delivery scope. List unsupported claims and
+the cheapest validation step for each critical unknown. Be direct. Do not
+rewrite weak ideas to make them sound stronger.
+```
+
+### Specification
+
+```text
+Turn the selected and validated idea into an implementation-ready PRD,
+architecture, milestone plan, threat model, risk register, decision log,
+open-questions list, and demo plan. Keep the MVP feasible for the actual
+deadline. Every milestone needs observable acceptance criteria and tests.
+Identify unverified dependencies. Never claim unimplemented work exists.
+```
 
 ---
 
